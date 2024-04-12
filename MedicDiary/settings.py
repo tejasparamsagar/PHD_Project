@@ -25,7 +25,7 @@ SECRET_KEY = '0(-tx=_av!m+mivi&au7$$3&+zomm3g8+_h^4upcp5=f(+pt75'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [".vercel.app", ".now.sh"]
 
 
 # Application definition
@@ -137,6 +137,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = os.path.join(BASE_DIR, "static")
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles_build", "static")
 MEDIA_ROOT = os.path.join(BASE_DIR,'userUploads')
 MEDIA_URL = '/userUploads/'
 LOGIN_URL = 'login'
